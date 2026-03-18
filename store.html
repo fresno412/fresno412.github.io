@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store | Dragonfly Ranch</title>
+  <meta name="description" content="We’re a family ranch focused on raising grass‑fed cattle with care and transparency from pasture to plate." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Dragonfly Ranch home">
+        <img src="assets/images/logo-dragonfly.svg" alt="" width="36" height="36" />
+        <span>Dragonfly Ranch</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Toggle menu</span>
+        ☰
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="visit.html">Visit</a></li>
+          <li><a class="btn btn-primary" href="#order">Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="shop">
+    <div class="shop-layout container">
+      <!-- Sidebar Filters -->
+      <aside class="filters" aria-label="Filters">
+        <button class="filters-toggle" aria-expanded="false" aria-controls="filters-panel">
+          Filters
+        </button>
+
+        <form id="filters-panel" class="filters-panel" aria-live="polite">
+          <!-- Search -->
+          <div class="filter-group">
+            <label for="search">Search</label>
+            <input type="search" id="search" name="search" placeholder="Search products…" />
+          </div>
+
+          <!-- Cut Type -->
+          <fieldset class="filter-group">
+            <legend>Cut type</legend>
+            <label class="check"><input type="checkbox" name="cut" value="steak" checked /> Steak</label>
+            <label class="check"><input type="checkbox" name="cut" value="roast" checked /> Roast</label>
+            <label class="check"><input type="checkbox" name="cut" value="ground" checked /> Ground</label>
+            <label class="check"><input type="checkbox" name="cut" value="bundle" checked /> Bundle</label>
+          </fieldset>
+
+          <!-- Availability -->
+          <fieldset class="filter-group">
+            <legend>Availability</legend>
+            <label class="radio"><input type="radio" name="availability" value="all" checked /> All</label>
+            <label class="radio"><input type="radio" name="availability" value="in" /> In stock</label>
+            <label class="radio"><input type="radio" name="availability" value="out" /> Out of stock</label>
+          </fieldset>
+
+          <!-- Price -->
+          <div class="filter-group">
+            <label for="maxPrice">Max price: <span id="maxPriceValue">$60</span></label>
+            <input type="range" id="maxPrice" name="maxPrice" min="5" max="100" value="60" step="5" />
+          </div>
+
+          <!-- Sort -->
+          <div class="filter-group">
+            <label for="sort">Sort by</label>
+            <select id="sort" name="sort">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="name-asc">Name: A → Z</option>
+              <option value="name-desc">Name: Z → A</option>
+            </select>
+          </div>
+
+          <div class="filter-actions">
+            <button type="reset" class="btn btn-outline">Reset</button>
+          </div>
+        </form>
+      </aside>
+
+      <!-- Catalog -->
+      <div class="catalog">
+        <header class="catalog-header">
+          <h2 class="catalog-title">All Products</h2>
+          <p class="catalog-count" aria-live="polite"><span id="count">9</span> items</p>
+        </header>
+
+        <ul id="productGrid" class="product-grid" aria-live="polite">
+          <!-- Sample product cards (use real images later) -->
+          <li class="product-card" 
+              data-name="T-Bone Steak" 
+              data-cut="steak" 
+              data-price="32" 
+              data-available="in">
+            <a class="product-media" href="#">
+              <img src="https://via.placeholder.com/600x450?text=T-Bone+Steak" alt="T-Bone Steak" loading="lazy" />
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">T-Bone Steak</h3>
+              <p class="product-desc">Tender classic with both strip and tenderloin—great for grilling.</p>
+              <div class="product-meta">
+                <span class="price">$32.00</span>
+                <span class="badge in-stock">In stock</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="product-card" 
+              data-name="Brisket" 
+              data-cut="roast" 
+              data-price="55" 
+              data-available="in">
+            <a class="product-media" href="#">
+              <img src="https://via.placeholder.com/600x450?text=Brisket" alt="Brisket" loading="lazy" />
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">Brisket</h3>
+              <p class="product-desc">Rich and flavorful—ideal for smoking or slow braising.</p>
+              <div class="product-meta">
+                <span class="price">$55.00</span>
+                <span class="badge in-stock">In stock</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="product-card" 
+              data-name="Lean Ground Beef" 
+              data-cut="ground" 
+              data-price="9" 
+              data-available="in">
+            <a class="product-media" href="#">
+              <img src="https://via.placeholder.com/600x450?text=Lean+Ground+Beef" alt="Lean Ground Beef" loading="lazy" />
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">Lean Ground Beef</h3>
+              <p class="product-desc">Versatile staple for burgers, tacos, and everyday meals.</p>
+              <div class="product-meta">
+                <span class="price">$9.00</span>
+                <span class="badge in-stock">In stock</span>
+              </div>
+            </div>
+          </li>
+
+          <!-- More sample items to show the grid (3 per row) -->
+          <li class="product-card" data-name="Ribeye Steak" data-cut="steak" data-price="36" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Ribeye" alt="Ribeye Steak" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Ribeye Steak</h3>
+              <p class="product-desc">Well-marbled, juicy, and deeply flavorful.</p>
+              <div class="product-meta"><span class="price">$36.00</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Sirloin Tip Roast" data-cut="roast" data-price="28" data-available="out">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Sirloin+Tip+Roast" alt="Sirloin Tip Roast" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Sirloin Tip Roast</h3>
+              <p class="product-desc">Lean roast best with low-and-slow roasting and slicing.</p>
+              <div class="product-meta"><span class="price">$28.00</span><span class="badge out-stock">Out of stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Beef Bundle Box" data-cut="bundle" data-price="120" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Bundle+Box" alt="Beef Bundle Box" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Beef Bundle Box</h3>
+              <p class="product-desc">Balanced selection of steaks, roasts, and ground beef.</p>
+              <div class="product-meta"><span class="price">$120.00</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Flank Steak" data-cut="steak" data-price="22" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Flank+Steak" alt="Flank Steak" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Flank Steak</h3>
+              <p class="product-desc">Lean, flavorful—great marinated and grilled.</p>
+              <div class="product-meta"><span class="price">$22.00</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Chuck Roast" data-cut="roast" data-price="24" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Chuck+Roast" alt="Chuck Roast" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Chuck Roast</h3>
+              <p class="product-desc">Classic pot roast—melts into tenderness when braised.</p>
+              <div class="product-meta"><span class="price">$24.00</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Ground Beef Family Pack" data-cut="ground" data-price="25" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Family+Ground+Pack" alt="Ground Beef Family Pack" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Ground Beef Family Pack</h3>
+              <p class="product-desc">Bulk savings for weekly meals and batch cooking.</p>
+              <div class="product-meta"><span class="price">$25.00</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      const grid = document.getElementById('productGrid');
+      const cards = Array.from(grid.querySelectorAll('.product-card'));
+      const countEl = document.getElementById('count');
+
+      const search = document.getElementById('search');
+      const checkboxes = Array.from(document.querySelectorAll('input[name="cut"]'));
+      const availability = Array.from(document.querySelectorAll('input[name="availability"]'));
+      const maxPrice = document.getElementById('maxPrice');
+      const maxPriceValue = document.getElementById('maxPriceValue');
+      const sort = document.getElementById('sort');
+
+      // Mobile filters toggle
+      const toggle = document.querySelector('.filters-toggle');
+      const panel = document.getElementById('filters-panel');
+      if (toggle && panel) {
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+        });
+      }
+
+      // Update label for price range
+      const updateMaxPriceLabel = () => maxPriceValue.textContent = `$${Number(maxPrice.value).toFixed(0)}`;
+      updateMaxPriceLabel();
+      maxPrice.addEventListener('input', updateMaxPriceLabel);
+
+      // Re-render (filter + sort)
+      function render() {
+        const q = (search.value || '').trim().toLowerCase();
+        const enabledCuts = new Set(checkboxes.filter(c => c.checked).map(c => c.value));
+        const avail = (availability.find(a => a.checked) || {}).value || 'all';
+        const priceCap = Number(maxPrice.value);
+
+        // Filter
+        const visible = cards.filter(card => {
+          const name = card.dataset.name.toLowerCase();
+          const cut = card.dataset.cut;
+          const price = Number(card.dataset.price);
+          const a = card.dataset.available; // 'in' or 'out'
+
+          const searchOk = !q || name.includes(q);
+          const cutOk = enabledCuts.has(cut);
+          const priceOk = price <= priceCap;
+          const availOk = (avail === 'all') || (avail === a);
+
+          return searchOk && cutOk && priceOk && availOk;
+        });
+
+        // Sort
+        const sorted = visible.sort((a, b) => {
+          const av = (k) => a.dataset[k];
+          const bv = (k) => b.dataset[k];
+          switch (sort.value) {
+            case 'price-asc': return Number(av('price')) - Number(bv('price'));
+            case 'price-desc': return Number(bv('price')) - Number(av('price'));
+            case 'name-asc': return av('name').localeCompare(bv('name'));
+            case 'name-desc': return bv('name').localeCompare(av('name'));
+            default: return 0; // featured (keep DOM order)
+          }
+        });
+
+        // Paint
+        grid.innerHTML = '';
+        sorted.forEach(card => grid.appendChild(card));
+        countEl.textContent = String(sorted.length);
+      }
+
+      // Bind
+      [search, maxPrice, sort].forEach(el => el.addEventListener('input', render));
+      checkboxes.forEach(c => c.addEventListener('change', render));
+      availability.forEach(r => r.addEventListener('change', render));
+
+      // Initial
+      render();
+    })();
+  </script>
+</body>
+</html>
