@@ -54,7 +54,6 @@
             <label class="check"><input type="checkbox" name="cut" value="steak" checked /> Steak</label>
             <label class="check"><input type="checkbox" name="cut" value="roast" checked /> Roast</label>
             <label class="check"><input type="checkbox" name="cut" value="ground" checked /> Ground</label>
-            <label class="check"><input type="checkbox" name="cut" value="bundle" checked /> Bundle</label>
           </fieldset>
 
           <!-- Availability -->
@@ -67,8 +66,8 @@
 
           <!-- Price -->
           <div class="filter-group">
-            <label for="maxPrice">Max price: <span id="maxPriceValue">$60</span></label>
-            <input type="range" id="maxPrice" name="maxPrice" min="5" max="100" value="60" step="5" />
+            <label for="maxPrice">Max price: <span id="maxPriceValue">60</span></label>
+            <input type="range" id="maxPrice" name="maxPrice" min="0" max="2850" value="60" step="10" />
           </div>
 
           <!-- Sort -->
@@ -99,45 +98,9 @@
         <ul id="productGrid" class="product-grid" aria-live="polite">
           <!-- Sample product cards (use real images later) -->
           <li class="product-card" 
-              data-name="T-Bone Steak" 
-              data-cut="steak" 
-              data-price="32" 
-              data-available="in">
-            <a class="product-media" href="#">
-              <img src="https://via.placeholder.com/600x450?text=T-Bone+Steak" alt="T-Bone Steak" loading="lazy" />
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">T-Bone Steak</h3>
-              <p class="product-desc">Tender classic with both strip and tenderloin—great for grilling.</p>
-              <div class="product-meta">
-                <span class="price">$32.00</span>
-                <span class="badge in-stock">In stock</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="product-card" 
-              data-name="Brisket" 
-              data-cut="roast" 
-              data-price="55" 
-              data-available="in">
-            <a class="product-media" href="#">
-              <img src="https://via.placeholder.com/600x450?text=Brisket" alt="Brisket" loading="lazy" />
-            </a>
-            <div class="product-info">
-              <h3 class="product-name">Brisket</h3>
-              <p class="product-desc">Rich and flavorful—ideal for smoking or slow braising.</p>
-              <div class="product-meta">
-                <span class="price">$55.00</span>
-                <span class="badge in-stock">In stock</span>
-              </div>
-            </div>
-          </li>
-
-          <li class="product-card" 
               data-name="Lean Ground Beef" 
               data-cut="ground" 
-              data-price="9" 
+              data-price="6.89" 
               data-available="in">
             <a class="product-media" href="#">
               <img src="https://via.placeholder.com/600x450?text=Lean+Ground+Beef" alt="Lean Ground Beef" loading="lazy" />
@@ -146,64 +109,137 @@
               <h3 class="product-name">Lean Ground Beef</h3>
               <p class="product-desc">Versatile staple for burgers, tacos, and everyday meals.</p>
               <div class="product-meta">
-                <span class="price">$9.00</span>
+                <span class="price">6.89/lb</span>
+                <span class="badge in-stock">In stock</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="product-card" 
+              data-name="T-Bone Steak" 
+              data-cut="steak" 
+              data-price="15.50" 
+              data-available="in">
+            <a class="product-media" href="#">
+              <img src="https://via.placeholder.com/600x450?text=T-Bone+Steak" alt="T-Bone Steak" loading="lazy" />
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">T-Bone Steak</h3>
+              <p class="product-desc">Tender classic with both strip and tenderloin—great for grilling.</p>
+              <div class="product-meta">
+                <span class="price">15.50/lb</span>
+                <span class="badge in-stock">In stock</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Rib Eye Steak" data-cut="steak" data-price="16.50" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Ribeye" alt="Ribeye Steak" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Rib Eye Steak</h3>
+              <p class="product-desc">Well-marbled, juicy, and deeply flavorful.</p>
+              <div class="product-meta"><span class="price">16.50/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Beef Tenderloin Filets" data-cut="steak" data-price="26.00" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Ribeye" alt="Ribeye Steak" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Beef Tenderloin Filets</h3>
+              <p class="product-desc">Well-marbled, juicy, and deeply flavorful.</p>
+              <div class="product-meta"><span class="price">26.00/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Top Sirloin" data-cut="steak" data-price="14.00" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Ribeye" alt="Ribeye Steak" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Top Sirloin</h3>
+              <p class="product-desc">Well-marbled, juicy, and deeply flavorful.</p>
+              <div class="product-meta"><span class="price">14.00/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Chuck Roast" data-cut="roast" data-price="7.00" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Chuck+Roast" alt="Chuck Roast" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Chuck Roast</h3>
+              <p class="product-desc">Classic pot roast—melts into tenderness when braised.</p>
+              <div class="product-meta"><span class="price">7.00/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Rump Roast" data-cut="roast" data-price="7.45" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Chuck+Roast" alt="Chuck Roast" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Rump Roast</h3>
+              <p class="product-desc">Classic pot roast—melts into tenderness when braised.</p>
+              <div class="product-meta"><span class="price">7.45/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" data-name="Strip Steak" data-cut="roast" data-price="15.00" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Chuck+Roast" alt="Chuck Roast" loading="lazy" /></a>
+            <div class="product-info">
+              <h3 class="product-name">Strip Steak</h3>
+              <p class="product-desc">Classic pot roast—melts into tenderness when braised.</p>
+              <div class="product-meta"><span class="price">15.00/lb</span><span class="badge in-stock">In stock</span></div>
+            </div>
+          </li>
+
+          <li class="product-card" 
+              data-name="Brisket" 
+              data-cut="roast" 
+              data-price="7.50" 
+              data-available="in">
+            <a class="product-media" href="#">
+              <img src="https://via.placeholder.com/600x450?text=Brisket" alt="Brisket" loading="lazy" />
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">Brisket</h3>
+              <p class="product-desc">Rich and flavorful—ideal for smoking or slow braising.</p>
+              <div class="product-meta">
+                <span class="price">7.50/lb</span>
                 <span class="badge in-stock">In stock</span>
               </div>
             </div>
           </li>
 
           <!-- More sample items to show the grid (3 per row) -->
-          <li class="product-card" data-name="Ribeye Steak" data-cut="steak" data-price="36" data-available="in">
-            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Ribeye" alt="Ribeye Steak" loading="lazy" /></a>
-            <div class="product-info">
-              <h3 class="product-name">Ribeye Steak</h3>
-              <p class="product-desc">Well-marbled, juicy, and deeply flavorful.</p>
-              <div class="product-meta"><span class="price">$36.00</span><span class="badge in-stock">In stock</span></div>
-            </div>
-          </li>
 
-          <li class="product-card" data-name="Sirloin Tip Roast" data-cut="roast" data-price="28" data-available="out">
+          <li class="product-card" data-name="Meaty Short Ribs" data-cut="roast" data-price="5.00" data-available="out">
             <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Sirloin+Tip+Roast" alt="Sirloin Tip Roast" loading="lazy" /></a>
             <div class="product-info">
-              <h3 class="product-name">Sirloin Tip Roast</h3>
+              <h3 class="product-name">Meaty Short Ribs</h3>
               <p class="product-desc">Lean roast best with low-and-slow roasting and slicing.</p>
-              <div class="product-meta"><span class="price">$28.00</span><span class="badge out-stock">Out of stock</span></div>
+              <div class="product-meta"><span class="price">5.00</span><span class="badge out-stock">Out of stock</span></div>
             </div>
           </li>
 
-          <li class="product-card" data-name="Beef Bundle Box" data-cut="bundle" data-price="120" data-available="in">
-            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Bundle+Box" alt="Beef Bundle Box" loading="lazy" /></a>
-            <div class="product-info">
-              <h3 class="product-name">Beef Bundle Box</h3>
-              <p class="product-desc">Balanced selection of steaks, roasts, and ground beef.</p>
-              <div class="product-meta"><span class="price">$120.00</span><span class="badge in-stock">In stock</span></div>
-            </div>
-          </li>
-
-          <li class="product-card" data-name="Flank Steak" data-cut="steak" data-price="22" data-available="in">
+          <li class="product-card" data-name="Whole Beef" data-cut="steak" data-price="2850" data-available="in">
             <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Flank+Steak" alt="Flank Steak" loading="lazy" /></a>
             <div class="product-info">
-              <h3 class="product-name">Flank Steak</h3>
+              <h3 class="product-name">Whole Beef</h3>
               <p class="product-desc">Lean, flavorful—great marinated and grilled.</p>
-              <div class="product-meta"><span class="price">$22.00</span><span class="badge in-stock">In stock</span></div>
+              <div class="product-meta"><span class="price">2,850.00</span><span class="badge in-stock">In stock</span></div>
             </div>
           </li>
 
-          <li class="product-card" data-name="Chuck Roast" data-cut="roast" data-price="24" data-available="in">
-            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Chuck+Roast" alt="Chuck Roast" loading="lazy" /></a>
+          <li class="product-card" data-name="Half Beef" data-cut="steak" data-price="1450" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Flank+Steak" alt="Flank Steak" loading="lazy" /></a>
             <div class="product-info">
-              <h3 class="product-name">Chuck Roast</h3>
-              <p class="product-desc">Classic pot roast—melts into tenderness when braised.</p>
-              <div class="product-meta"><span class="price">$24.00</span><span class="badge in-stock">In stock</span></div>
+              <h3 class="product-name">Half Beef</h3>
+              <p class="product-desc">Lean, flavorful—great marinated and grilled.</p>
+              <div class="product-meta"><span class="price">1,450.00</span><span class="badge in-stock">In stock</span></div>
             </div>
           </li>
 
-          <li class="product-card" data-name="Ground Beef Family Pack" data-cut="ground" data-price="25" data-available="in">
-            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Family+Ground+Pack" alt="Ground Beef Family Pack" loading="lazy" /></a>
+          <li class="product-card" data-name="Quarter Beef" data-cut="steak" data-price="750" data-available="in">
+            <a class="product-media" href="#"><img src="https://via.placeholder.com/600x450?text=Flank+Steak" alt="Flank Steak" loading="lazy" /></a>
             <div class="product-info">
-              <h3 class="product-name">Ground Beef Family Pack</h3>
-              <p class="product-desc">Bulk savings for weekly meals and batch cooking.</p>
-              <div class="product-meta"><span class="price">$25.00</span><span class="badge in-stock">In stock</span></div>
+              <h3 class="product-name">Quarter Beef</h3>
+              <p class="product-desc">Lean, flavorful—great marinated and grilled.</p>
+              <div class="product-meta"><span class="price">750.00</span><span class="badge in-stock">In stock</span></div>
             </div>
           </li>
         </ul>
@@ -234,7 +270,7 @@
       }
 
       // Update label for price range
-      const updateMaxPriceLabel = () => maxPriceValue.textContent = `$${Number(maxPrice.value).toFixed(0)}`;
+      const updateMaxPriceLabel = () => maxPriceValue.textContent = `${Number(maxPrice.value).toFixed(0)}`;
       updateMaxPriceLabel();
       maxPrice.addEventListener('input', updateMaxPriceLabel);
 
